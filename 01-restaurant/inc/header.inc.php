@@ -6,10 +6,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./styles/simple.css" />
     <link rel="stylesheet" href="./styles/custom.css" />
-    <title>Culinary Cove &bull; <?= $pageTitle ?></title>
+    <?php if (!empty($pageTitle)): ?>
+        <title>Culinary Cove &bull; <?= $pageTitle ?></title>
+    <?php else: ?>
+        <title>Culinary Cove</title>
+    <?php endif; ?>
+    <?php  /*
+    <title>Culinary Cove <?php if (!empty($pageTitle)): ?> &bull; <?= $pageTitle ?></title>
+        */ ?>
 </head>
 
 <body>
+    <?php
+    if (empty($headerImg)) {
+        $headerImg = 'images/pexels-engin-akyurt-1435904.jpg';
+    }
+    ?>
     <header class="header-with-background" style="background-image: url('<?= $headerImg; ?>'); ">
         <h1>Culinary Cove</h1>
         <p>Your sanctuary for exceptional flavors</p>
