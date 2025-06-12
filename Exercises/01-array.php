@@ -27,7 +27,15 @@
         // $firstCategory = $categories[0];
         // var_dump($firstCategory);
 
+        var_dump(count($categories));
 
+        if (in_array('Programming', $categories)) {
+            echo "Programming is a category on our system.\n";
+        }
+
+        var_dump(isset($categories[99]));
+        var_dump(empty($categories[99]));
+        // var_dump($categories[99]);
 
         ?>
     </pre>
